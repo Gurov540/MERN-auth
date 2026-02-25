@@ -5,13 +5,16 @@
   border-radius: 0.5rem;
   transition: background-color 0.2s ease;
   outline: none;
+  text-decoration: none;
 }
 .button:focus {
   outline: none;
 }
 
 .button:focus-visible {
-  box-shadow: 0 0 0 2px #6366f1, 0 0 0 4px white;
+  box-shadow:
+    0 0 0 2px #6366f1,
+    0 0 0 4px white;
 }
 
 .button:disabled {
