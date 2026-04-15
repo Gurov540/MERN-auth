@@ -1,8 +1,8 @@
 import bcryptjs from "bcryptjs";
 import { Response } from "express";
-import { generateToken } from "../utils/generateToken.js";
-import { User } from "../models/user.model.js";
-import { AuthRequest, SignupRequest, LoginRequest } from "../types/index.js";
+import { generateToken } from "../utils/generateToken";
+import { User } from "../models/user.model";
+import { AuthRequest, SignupRequest, LoginRequest } from "../types/index";
 
 export const signup = async (
   req: AuthRequest,
@@ -78,14 +78,12 @@ export const login = async (
 
     user.lastLogin = new Date();
 
-    // Add session info
     const sessionInfo = {
       loginTime: new Date(),
       ipAddress: req.ip || req.socket.remoteAddress,
       userAgent: req.headers["user-agent"] || "Unknown",
     };
 
-    // Keep only last 5 sessions
     if (user.sessions.length >= 5) {
       user.sessions.shift();
     }
