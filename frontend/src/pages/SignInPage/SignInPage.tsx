@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom";
+import { useState, type FormEvent, type ChangeEvent } from "react";
+import { AxiosError } from "axios";
+
+import { useAuthStore } from "../../store/authStore";
+
 import styles from "./SignInPage.module.css";
 
 import { Input } from "../../shared/ui/Input";
