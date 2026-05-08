@@ -6,6 +6,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   color?: "primary" | "success";
   inputSize?: "small" | "medium" | "large";
   fullWidth?: boolean;
+  error?: string;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -13,6 +14,7 @@ export const Input: React.FC<InputProps> = ({
   inputSize = "medium",
   fullWidth = false,
   className,
+  error,
   ...props
 }) => {
   const inputClasses = [
@@ -20,10 +22,16 @@ export const Input: React.FC<InputProps> = ({
     styles[color],
     styles[inputSize],
     fullWidth && styles.fullWidth,
+    error && styles.error,
     className,
   ]
     .filter(Boolean)
     .join(" ");
 
-  return <input className={inputClasses} {...props} />;
+  return (
+    <div className={styles.wrapper}>
+      <input className={inputClasses} {...props} />
+      {error && <span className={styles.errorText}>{error}</span>}
+    </div>
+  );
 };
