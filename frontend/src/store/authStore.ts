@@ -14,8 +14,8 @@ interface User {
   name: string;
   isVerified: boolean;
   lastLogin: string;
-  createAt: string;
-  session?: Array<{
+  createdAt: string;
+  sessions?: Array<{
     loginTime: string;
     ipAddress?: string;
     userAgent?: string;
