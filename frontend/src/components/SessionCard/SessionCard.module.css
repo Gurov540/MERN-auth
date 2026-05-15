@@ -1,0 +1,112 @@
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.title {
+  margin: 0 0 24px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.sessionList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sessionItem {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+.sessionItem:hover {
+  background: #f3f4f6;
+  transform: translateX(4px);
+}
+
+.sessionIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4361ee 0%, #3730a3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.sessionInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sessionHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.browser {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.device {
+  font-size: 13px;
+  color: #6b7280;
+  padding: 2px 8px;
+  background: #e5e7eb;
+  border-radius: 6px;
+}
+
+.sessionDetails {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: monospace;
+}
+
+.noSessions {
+  text-align: center;
+  color: #6b7280;
+  padding: 32px;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
