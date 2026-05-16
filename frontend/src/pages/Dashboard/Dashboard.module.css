@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
   background: #ffffff;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
