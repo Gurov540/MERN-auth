@@ -4,8 +4,20 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/SignInPage/SignInPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import DashboardPage from "./pages/Dashboard/Dashboard";
+import { useEffect } from "react";
+import { useAuthStore } from "./store/authStore";
 
 function App() {
+  const { checkAuth, isCheckingAuth } = useAuthStore();
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
+  if (isCheckingAuth) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
